@@ -1,0 +1,18 @@
+- name: fzf
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install fzf (macOS)
+      homebrew:
+          name: fzf
+      when: is_mac
+    - name: Install fzf shortcut
+      shell: $(brew --prefix)/opt/fzf/install
+      when: is_mac

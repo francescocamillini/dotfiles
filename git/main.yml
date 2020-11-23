@@ -1,0 +1,20 @@
+- name: Git
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - include_vars: ../os.yml
+    # Linux
+    # macOS
+
+    - name: Install Git (macOS)
+      homebrew:
+        name: git
+      when: is_mac
+    - name: Install Git Flow (macOS)
+      homebrew:
+        name: git-flow-avh
+      when: is_mac
+    - name: Copy gitconfig
+      copy:
+        src: ./gitconfig
+        dest: ~/.gitconfig

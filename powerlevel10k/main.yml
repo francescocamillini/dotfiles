@@ -1,0 +1,17 @@
+- name: Powerlevel10k
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Check if powerlevel10k is already installed
+      stat:
+        path: ~/.oh-my-zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+      register: stat_powerlevel10k_result
+    - name: Cloning powerlevel10k
+      git:
+        repo=https://github.com/romkatv/powerlevel10k.git 
+        dest=~/.oh-my-zsh/themes/powerlevel10k
+      when: not stat_powerlevel10k_result.stat.exists
+    - name: Copy config file
+      copy:
+        src: ./p10k.zsh
+        dest: ~/.p10k.zsh

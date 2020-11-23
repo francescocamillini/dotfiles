@@ -1,0 +1,11 @@
+- name: Poetry
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Install Poetry
+      shell:
+        cmd: "curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -"
+        warn: false
+      args:
+        creates: ~/.poetry/bin/poetry

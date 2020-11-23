@@ -1,0 +1,20 @@
+- name: Zsh
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install Zsh (macOS)
+      homebrew:
+        name: zsh
+      when: is_mac
+  
+    - name: copy .zshrc
+      copy:
+        src: zshrc
+        dest: ~/.zshrc

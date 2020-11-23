@@ -1,0 +1,17 @@
+- name: Alacritty
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - include_vars: ../os.yml
+    # macOS
+
+    - name: Checks if Meslo fonts is already installed 
+      stat:
+        path: "~/Library/Fonts/MesloLGS NF Regular.ttf"
+      register: Meslo
+
+    - name: Install MesloLGS font
+      copy: 
+        src: ./fonts/
+        dest: ~/Library/Fonts
+      when: is_mac and not Meslo.stat.exists

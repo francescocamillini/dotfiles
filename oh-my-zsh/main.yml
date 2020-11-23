@@ -1,0 +1,22 @@
+- name: Oh My Zsh
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Check if .oh-my-zsh exists
+      stat:
+        path: ~/.oh-my-zsh
+      register: stat_oh_my_zsh_result
+    - name: Cloning  oh-my-zsh
+      git:
+        repo=https://github.com/robbyrussell/oh-my-zsh
+        dest=~/.oh-my-zsh
+      when: not stat_oh_my_zsh_result.stat.exists
+    - name: Check if zsh completion exists
+      stat:
+        path: ~/.oh-my-zsh/custom}/plugins/zsh-completions
+      register: stat_zsh_completion
+    - name: Cloning zsh completion
+      git:
+        repo=https://github.com/zsh-users/zsh-completions
+        dest=~/.oh-my-zsh/custom/plugins/zsh-completions
+

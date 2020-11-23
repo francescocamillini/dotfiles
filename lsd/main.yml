@@ -1,0 +1,15 @@
+- name: lsd
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install lsd (macOS)
+      homebrew:
+        name: lsd
+      when: is_mac

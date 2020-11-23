@@ -1,0 +1,15 @@
+- name: Firefox
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install firefox (macOS)
+      homebrew_cask:
+        name: firefox
+      when: is_mac

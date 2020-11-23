@@ -1,0 +1,15 @@
+- name: NodeJS
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Install Node Version Manager
+      shell:
+        cmd: "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash"
+        warn: false
+      args:
+        creates: ~/.nvm/install.sh
+    - name: Install node
+      shell: source /Users/francesco.camillini/.zshrc && nvm install 14.15.1
+      args:
+        executable: /usr/local/bin/zsh

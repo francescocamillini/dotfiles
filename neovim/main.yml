@@ -1,0 +1,27 @@
+- name: Neovim
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+    # Linux
+
+    # macOS
+
+    - name: Install Neovim (macOS)
+      homebrew:
+        name: neovim
+      when: is_mac
+    - name: Copy neovim configuration
+      copy:
+        src: ./init.vim
+        dest: ~/.config/nvim/init.vim
+    - name: Check if vim-plug is installed
+      stat:
+        path: ~/.local/share/nvim/site/autoload/plug.vim
+      register: stat_vim_plug_result
+    - name: Cloning  vim plug
+      shell: sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+      when: not stat_vim_plug_result.stat.exists
+    - name: Install plugin
+      shell: nvim +PlugInstall +qall

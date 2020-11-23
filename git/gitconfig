@@ -1,0 +1,18 @@
+[user]
+	name = Francesco Camillini
+	email = francesco.camillini@gmail.com
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore-global
+[color]
+	ui = true
+[color "status"]
+    changed = red bold
+    untracked = magenta bold
+    added = green bold
+[alias]
+    tree = log --oneline --color --decorate --all --graph
+    merge = merge --no-ff
+    st = status -s
+[github]
+	user = francescocamillini

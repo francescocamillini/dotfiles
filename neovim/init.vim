@@ -19,8 +19,12 @@ nnoremap <C-P> :FZF<CR>
 nnoremap <C-F> :Ag<CR>
 inoremap <C-d> <esc>ddi|                                                                                                " insert mode: delete current line
 inoremap <C-u> <esc>viwUea|                                                                                             " insert mode: uppercase current word
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+noremap <Leader>q :bd<Cr>
 nnoremap <Leader><Leader>o :tabe ~/.config/nvim/init.vim<CR>
 nnoremap <Leader><Leader>s :source ~/.config/nvim/init.vim<CR>
+
 
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -36,10 +40,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 Plug 'pangloss/vim-javascript'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'                                                                                                 " fuzzy search integration
 Plug 'vim-airline/vim-airline', {'do': ':UpdateRemotePlugins'}
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 colorscheme jellybeans

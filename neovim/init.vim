@@ -39,6 +39,7 @@ Plug 'pangloss/vim-javascript'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'                                                                                                 " fuzzy search integration
 Plug 'vim-airline/vim-airline', {'do': ':UpdateRemotePlugins'}
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 colorscheme jellybeans

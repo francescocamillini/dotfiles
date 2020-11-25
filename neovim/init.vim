@@ -24,7 +24,7 @@ nnoremap <S-Tab> :bprevious<CR>
 noremap <Leader>q :bd<Cr>
 nnoremap <Leader><Leader>o :tabe ~/.config/nvim/init.vim<CR>
 nnoremap <Leader><Leader>s :source ~/.config/nvim/init.vim<CR>
-
+inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -43,7 +43,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline', {'do': ':UpdateRemotePlugins'}
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } },
-Plug 'hashicorp/terraform-ls'
 call plug#end()
 
 colorscheme jellybeans

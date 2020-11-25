@@ -16,6 +16,10 @@
       copy:
         src: ./init.vim
         dest: ~/.config/nvim/init.vim
+    - name: Copy coc-settings.json
+      copy:
+        src: ./coc-settings.json
+        dest: ~/.config/nvim/coc-settings.json
     - name: Check if vim-plug is installed
       stat:
         path: ~/.local/share/nvim/site/autoload/plug.vim

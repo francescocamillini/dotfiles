@@ -19,17 +19,24 @@ nnoremap <C-P> :FZF<CR>
 nnoremap <C-F> :Ag<CR>
 inoremap <C-d> <esc>ddi|                                                                                                " insert mode: delete current line
 inoremap <C-u> <esc>viwUea|                                                                                             " insert mode: uppercase current word
+inoremap <C-s> <esc>:w<CR>i
+nnoremap <C-s> <esc>:w<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
-noremap <Leader>q :bd<Cr>
+nnoremap <Leader>q :bd<CR>
+nnoremap <Leader><Leader>q :bp\|bd #<CR>
+
 nnoremap <Leader><Leader>o :tabe ~/.config/nvim/init.vim<CR>
 nnoremap <Leader><Leader>s :source ~/.config/nvim/init.vim<CR>
 inoremap <silent><expr> <c-space> coc#refresh()
 
+nmap <silent> gd <Plug>(coc-definition)
+
 let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-tsserver',
-            \ 'coc-yaml'
+            \ 'coc-yaml',
+            \ 'coc-prettier'
             \ ]
 
 
@@ -43,6 +50,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline', {'do': ':UpdateRemotePlugins'}
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } },
+Plug 'chrisbra/csv.vim'
 call plug#end()
 
 colorscheme jellybeans

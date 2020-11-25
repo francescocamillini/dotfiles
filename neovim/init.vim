@@ -42,7 +42,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-loc
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline', {'do': ':UpdateRemotePlugins'}
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } },
+Plug 'hashicorp/terraform-ls'
 call plug#end()
 
 colorscheme jellybeans

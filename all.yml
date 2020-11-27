@@ -18,3 +18,4 @@
 - import_playbook: fzf/main.yml
 - import_playbook: the-silver-searcher/main.yml
 - import_playbook: aws-cli/main.yml
+- import_playbook: skype/main.yml

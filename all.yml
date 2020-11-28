@@ -13,6 +13,7 @@
 - import_playbook: firefox/main.yml
 - import_playbook: alacritty/main.yml
 - import_playbook: nodejs/main.yml
+- import_playbook: pyenv/main.yml
 - import_playbook: poetry/main.yml
 - import_playbook: docker/main.yml
 - import_playbook: fzf/main.yml

@@ -1,0 +1,28 @@
+- name: pyenv
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install pyenv (macOS)
+      homebrew:
+        name: pyenv
+      when: is_mac
+
+
+    - name: Checks if Meslo fonts is already installed 
+      stat:
+        path: "~/.pyenv/versions/3.9.0"
+      register: python
+
+    - name: Install python
+      shell: pyenv install 3.9.0
+      when: is_mac and not python.stat.exists
+
+    - name: Set global python
+      shell: pyenv global 3.9.0

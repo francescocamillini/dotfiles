@@ -19,3 +19,5 @@
 - import_playbook: the-silver-searcher/main.yml
 - import_playbook: aws-cli/main.yml
 - import_playbook: skype/main.yml
+- import_playbook: lastpass/main.yml
+- import_playbook: postman/main.yml

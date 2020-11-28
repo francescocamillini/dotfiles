@@ -1,0 +1,15 @@
+- name: Postman
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install postman (macOS)
+      homebrew_cask:
+        name: postman
+      when: is_mac

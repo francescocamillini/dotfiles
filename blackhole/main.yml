@@ -1,0 +1,15 @@
+- name: Blackhole
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install Blackhole (macOS)
+      homebrew_cask:
+        name: blackhole
+      when: is_mac

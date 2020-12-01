@@ -51,11 +51,15 @@ Plug 'vim-airline/vim-airline', {'do': ':UpdateRemotePlugins'}
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } },
 Plug 'chrisbra/csv.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 colorscheme jellybeans
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
+let g:typescript_indent_disable = 1

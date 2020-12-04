@@ -1,0 +1,18 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "python",
+    "markdown",
+    "javascript",
+    "typescript",
+    "json",
+    "jsonc",
+    "python"
+  ],
+  "prettier.eslintIntegration": true,
+  "suggest.noselect": false,
+  "python.jediEnabled": false,
+  "python.formatting.provider": "black",
+  "coc.preferences.hoverTarget": "echo",
+  "signature.target": "echo"
+}

@@ -56,6 +56,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
 Plug 'BurntSushi/ripgrep'
 Plug 'ihsanturk/neuron.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'michal-h21/vim-zettel'
 call plug#end()
 
 colorscheme jellybeans
@@ -78,3 +80,6 @@ function! s:show_documentation()
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
+
+" Settings for Vimwiki
+let g:vimwiki_list = [{'path':'~/scratchbox/vimwiki/markdown/','ext':'.md', 'syntax':'markdown'}, {"path":"~/scratchbox/vimwiki/wiki/"}]

@@ -1,0 +1,15 @@
+- name: NoSQL Workbench
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - include_vars: ../os.yml
+
+    # Linux
+
+    # macOS
+
+    - name: Install NoSQL Workbench (macOS)
+      homebrew_cask:
+        name: nosql-workbench 
+      when: is_mac

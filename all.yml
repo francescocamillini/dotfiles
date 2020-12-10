@@ -25,3 +25,4 @@
 - import_playbook: blackhole/main.yml
 - import_playbook: nosql-workbench/main.yml
 - import_playbook: jq/main.yml
+- import_playbook: pandoc/main.yml

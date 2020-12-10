@@ -1,4 +1,4 @@
-- name: NoSQL Workbench
+- name: pandoc
   hosts: 127.0.0.1
   connection: local
 
@@ -9,7 +9,7 @@
 
     # macOS
 
-    - name: Install NoSQL Workbench (macOS)
-      homebrew_cask:
-        name: nosql-workbench
+    - name: Install pandoc (macOS)
+      homebrew:
+        name: pandoc
       when: is_mac

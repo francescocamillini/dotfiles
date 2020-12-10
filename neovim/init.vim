@@ -54,6 +54,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } },
 Plug 'chrisbra/csv.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
+Plug 'BurntSushi/ripgrep'
+Plug 'ihsanturk/neuron.vim'
 call plug#end()
 
 colorscheme jellybeans
